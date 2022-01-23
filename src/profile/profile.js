@@ -13,7 +13,7 @@ module.exports = async (browser, cookies, url, waitTimeToScrapMs = 500, hasToGet
   logger.info(`starting scraping url: ${url}`)
 
   const page = await openPage({ browser, cookies, url, puppeteerAuthenticate })
-  const profilePageIndicatorSelector = '.pv-profile-section'
+  const profilePageIndicatorSelector = '.pv-profile-body-wrapper'
   await page.waitFor(profilePageIndicatorSelector, { timeout: 5000 })
     .catch(() => {
       //why doesn't throw error instead of continuing scraping?
@@ -23,7 +23,7 @@ module.exports = async (browser, cookies, url, waitTimeToScrapMs = 500, hasToGet
 
   logger.info('scrolling page to the bottom')
   await scrollToPageBottom(page)
-  
+
   if(waitTimeToScrapMs) {
     logger.info(`applying 1st delay`)
     await new Promise((resolve) => { setTimeout(() => { resolve() }, waitTimeToScrapMs / 2)})

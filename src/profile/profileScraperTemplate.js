@@ -15,15 +15,15 @@ const template = {
     }
   },
   about: {
-    selector: '.pv-about-section',
+    selector: '#about ~ .ph5.pv3',
     fields: {
-      text: 'p'
+      text: 'span.visually-hidden'
     }
   },
   positions: {
-    selector: '#experience-section li:not(.pv-entity__position-group-role-item)',
+    selector: '#experience ~ .pvs-list__outer-container > ul.pvs-list > li',
     fields: {
-      title: 'h3',
+      title: '.mr1 span',
       link: {
         selector: 'a',
         attribute: 'href',
@@ -32,11 +32,11 @@ const template = {
         selector: 'a',
         attribute: 'href'
       },
-      companyName: '.pv-entity__secondary-title',
-      location: '.pv-entity__location span:last-child',
-      description: '.pv-entity__description',
-      date1: '.pv-entity__date-range span:last-child',
-      date2: '.pv-entity__bullet-item-v2',
+      companyName: 'div:nth-child(2) div div:nth-child(1) .t-14 span',
+      location: 'div:nth-child(2) div div:nth-child(1) span:nth-child(4) span',
+      description: '.pvs-list__outer-container li',
+      date1: 'div:nth-child(2) div div:nth-child(1) span:nth-child(3) span',
+      date2: '.not-selectable',
       roles: {
         selector: 'li',
         hasChildrenFields: true,
@@ -51,25 +51,25 @@ const template = {
     }
   },
   educations: {
-    selector: '#education-section li',
+    selector: '#education ~ .pvs-list__outer-container > ul.pvs-list > li',
     fields: {
-      title: 'h3',
-      degree: 'span[class=pv-entity__comma-item]',
+      title: 'div:nth-child(2) div a div span span',
+      degree: 'div:nth-child(2) div a > span:nth-child(2) span',
       url: {
         selector: 'a',
         attribute: 'href'
       },
 	    fieldOfStudy: 'p.pv-entity__fos span:nth-child(2)',
-      date1: '.pv-entity__dates time:nth-child(1)',
-      date2: '.pv-entity__dates time:nth-child(2)',
+      date1: '.div:nth-child(2) div a > span:nth-child(3) span',
+      date2: '.not-selectable',
       description: '.pv-entity__description'
     }
   },
   skills: {
-    selector: '.pv-skill-category-entity__skill-wrapper',
+    selector: '#skills ~ .pvs-list__outer-container > ul.pvs-list > li',
     fields: {
-      title: '.pv-skill-category-entity__name-text',
-      count: '.pv-skill-category-entity__endorsement-count'
+      title: '.mr1 span',
+      count: '.not-selectable'
     }
   },
   recommendationsCount: {

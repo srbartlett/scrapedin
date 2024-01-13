@@ -2,7 +2,7 @@ const profileSelector = '.core-rail > *:first-child section >'
 
 const template = {
   profile: {
-    selector: '.pv-top-card',
+    selector: '.artdeco-card',
     fields: {
       name: `.text-heading-xlarge`,
       headline: `.text-body-medium`,
